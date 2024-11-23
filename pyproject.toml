@@ -1,0 +1,49 @@
+[project]
+name = "pretalx-rocket"
+dynamic = ["version"]
+description = "pretalx plugin to send notifications about changes to submissions to a Rocket.Chat channel"
+readme = "README.rst"
+license = {text = "Apache Software License"}
+keywords = ["pretalx"]
+authors = [
+  {name = "Florian Moesch", email = "florian@moesch.org"},
+]
+maintainers = [
+  {name = "Florian Moesch", email = "florian@moesch.org"},
+]
+
+dependencies = [
+  "rocketchat-API",
+]
+
+[project.optional-dependencies]
+dev = [
+  "black",
+  "build",
+  "check-manifest",
+  "flake8",
+  "isort",
+]
+
+[project.urls]
+homepage = "https://github.com/badbadc0ffee/pretalx-rocket"
+repository = "https://github.com/badbadc0ffee/pretalx-rocket.git"
+
+[project.entry-points."pretalx.plugin"]
+pretalx_rocket = "pretalx_rocket:PretalxPluginMeta"
+
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = ["setuptools"]
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.dynamic]
+version = {attr = "pretalx_rocket.__version__"}
+
+[tool.setuptools.packages.find]
+include = ["pretalx*"]
+
+[tool.check-manifest]
+ignore = [".*"]

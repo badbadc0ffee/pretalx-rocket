@@ -1,0 +1,6 @@
+recursive-include pretalx_rocket/static *
+recursive-include pretalx_rocket/templates *
+exclude pretalx_rocket/locale/django.pot
+recursive-include pretalx_rocket/locale *
+recursive-include pretalx_rocket *.py
+include Makefile
