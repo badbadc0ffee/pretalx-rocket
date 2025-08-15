@@ -14,7 +14,7 @@ logger = logging.getLogger(__name__)
 
 @receiver(nav_event_settings)
 def rocket_settings(sender, request, **kwargs):
-    if not request.user.has_perm("orga.change_settings", request.event):
+    if not request.user.has_perm("event.update_event", request.event):
         return []
     return [
         {

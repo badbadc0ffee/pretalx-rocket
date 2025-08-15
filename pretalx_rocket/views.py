@@ -7,7 +7,7 @@ from .forms import SettingsForm
 
 
 class SettingsView(PermissionRequired, FormView):
-    permission_required = "orga.change_settings"
+    permission_required = "event.update_event"
     template_name = "pretalx_rocket/settings.html"
     form_class = SettingsForm
 
